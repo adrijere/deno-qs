@@ -14,17 +14,17 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
 
-    - name: Install Deno (Linux)
-      run: |
-        curl -fsSL https://deno.land/x/install/install.sh | sh
+      - name: Install Deno (Linux)
+        run: |
+          curl -fsSL https://deno.land/x/install/install.sh | sh
 
-    - name: Log versions
-      run: |
-      /home/runner/.deno/bin/deno --version
+      - name: Log versions
+        run: |
+          /home/runner/.deno/bin/deno --version
 
-    - name: Test (Linux)
-      run: |
-        /home/runner/.deno/bin/deno test test.ts
+      - name: Test (Linux)
+        run: |
+          /home/runner/.deno/bin/deno test test.ts
