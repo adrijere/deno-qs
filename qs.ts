@@ -14,4 +14,9 @@ export class qs {
       {}
     );
   }
+
+  // TODO: add version that doesn't throw
+  static unescape(str: string): string {
+    return decodeURIComponent(str);
+  }
 }
