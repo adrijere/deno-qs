@@ -5,6 +5,10 @@ Deno.test("Parse fonction on string", function () {
   assertEquals(qs.parse("a=c"), { a: "c" });
 });
 
+Deno.test("Parse fonction on string", function () {
+  assertEquals(qs.parse("a=c=b"), { a: "c=b" });
+});
+
 Deno.test("Parse fonction on string with specific equalizer", function () {
   assertEquals(qs.parse("a=>c", { eq: "=>" }), { a: "c" });
 });

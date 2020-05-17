@@ -12,8 +12,9 @@ export class qs {
 
     return segmentation.reduce(
       (result: Record<string, string>, str: string) => {
-        let key: string = str.split(eq)[0];
-        let value: string = str.split(eq)[1];
+        let split_values: string[] = str.split(eq);
+        let key: string = split_values.shift()!;
+        let value: string = split_values.join(eq);
         let return_value: Record<string, string> = {};
 
         return_value[key] = value;
