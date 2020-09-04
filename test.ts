@@ -17,6 +17,10 @@ Deno.test("Parse fonction on long string", function () {
   assertEquals(qs.parse("a=c&foo=bar"), { a: "c", foo: "bar" });
 });
 
+Deno.test("URL percent-encoding on the given string", function () {
+  assertEquals(qs.escape("a=c"), "a%3Dc");
+});
+
 Deno.test("Parse fonction on long string with specific separator", function () {
   assertEquals(qs.parse("a=c|foo=bar", { sep: "|" }), { a: "c", foo: "bar" });
 });

@@ -23,4 +23,8 @@ export class qs {
       {}
     );
   }
+
+  static escape(str: string): string {
+    return encodeURIComponent(str);
+  }
 }
